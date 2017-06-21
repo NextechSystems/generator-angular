@@ -28,11 +28,17 @@ var Generator = module.exports = function Generator() {
   this.classedName = this._.classify(this.name);
 
   if (typeof this.env.options.appPath === 'undefined') {
+    /*
     this.env.options.appPath = this.options.appPath || bowerJson.appPath || 'app';
+    */
+    this.env.options.appPath = '';
     this.options.appPath = this.env.options.appPath;
   }
 
+  /*
   this.env.options.testPath = this.env.options.testPath || bowerJson.testPath || 'test/spec';
+  */
+  this.env.options.testPath = this.options.appPath;
 
   this.env.options.typescript = this.options.typescript;
   if (typeof this.env.options.typescript === 'undefined') {
@@ -83,21 +89,21 @@ util.inherits(Generator, yeoman.generators.NamedBase);
 Generator.prototype.appTemplate = function (src, dest) {
   yeoman.generators.Base.prototype.template.apply(this, [
     src + this.scriptSuffix,
-    path.join(this.env.options.appPath, dest.toLowerCase()) + this.scriptSuffix
+    path.join(this.env.options.appPath, dest) + this.scriptSuffix
   ]);
 };
 
 Generator.prototype.testTemplate = function (src, dest) {
   yeoman.generators.Base.prototype.template.apply(this, [
     src + this.scriptSuffix,
-    path.join(this.env.options.testPath, dest.toLowerCase()) + this.scriptSuffix
+    path.join(this.env.options.testPath, dest) + '.spec' + this.scriptSuffix
   ]);
 };
 
 Generator.prototype.htmlTemplate = function (src, dest) {
   yeoman.generators.Base.prototype.template.apply(this, [
     src,
-    path.join(this.env.options.appPath, dest.toLowerCase())
+    path.join(this.env.options.appPath, dest)
   ]);
 };
 
@@ -125,7 +131,7 @@ Generator.prototype.generateSourceAndTest = function (appTemplate, testTemplate,
     this.cameledName = this.classedName;
   }
 
-  this.appTemplate(appTemplate, path.join('scripts', targetDirectory, this.name));
+  this.appTemplate(appTemplate, path.join(targetDirectory, this.name));
   this.testTemplate(testTemplate, path.join(targetDirectory, this.name));
   if (!skipAdd) {
     this.addScriptToIndex(path.join(targetDirectory, this.name));

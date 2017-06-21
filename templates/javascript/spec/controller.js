@@ -1,23 +1,25 @@
 'use strict';
 
-describe('Controller: <%= classedName %>Ctrl', function () {
+describe('<%= cameledName %>: ', function () {
 
-  // load the controller's module
-  beforeEach(module('<%= scriptAppName %>'));
+  var scope, component, controller;
 
-  var <%= classedName %>Ctrl,
-    scope;
+  beforeEach(angular.mock.module('<%= scriptAppName %>'));
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _$componentController_) {
     scope = $rootScope.$new();
-    <%= classedName %>Ctrl = $controller('<%= classedName %>Ctrl', {
-      $scope: scope
-      // place here mocked dependencies
-    });
+
+    element = angular.element('<<%= name %>></<%= name %>>');
+    element = $compile(element)(scope);
+
+    component = _$componentController_('<%= cameledName %>', { $scope: scope });
+    controller = element.controller('<%= cameledName %>');
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(<%= classedName %>Ctrl.awesomeThings.length).toBe(3);
+  describe('UI Tests: ', function () {
   });
+
+  describe('Functional Tests: ', function () {
+  });
+
 });
