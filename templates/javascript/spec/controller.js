@@ -1,10 +1,8 @@
-'use strict';
-
 describe('<%= cameledName %>: ', function () {
 
   var scope, component, controller;
 
-  beforeEach(angular.mock.module('<%= scriptAppName %>'));
+  beforeEach(angular.mock.module(''));
 
   beforeEach(inject(function ($controller, $rootScope, _$componentController_) {
     scope = $rootScope.$new();

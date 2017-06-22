@@ -6,7 +6,7 @@ let <%= cameledName %> = {
     },
     template,
     controller,
-    name: '<%= classedName %>'
+    name: '<%= cameledName %>'
 }
 
 export default <%= cameledName %>;
