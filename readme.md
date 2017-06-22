@@ -1,3 +1,25 @@
+# Nextech AngularJS Generator
+
+### Installation
+1. Clone this repo.
+2. Browse to your local generator-angular directory and run: `npm pack`
+3. Globally install the newly created package i.e. `npm install -g generator-angular-0.16.0.tgz`
+
+### Use
+
+##### Create a module
+Open a command prompt to the parent folder where you want the module and run the following command...
+`yo angular:module [module-name]`
+...replacing [module-name] with the name of your modue (using kebab-case).
+
+##### Create a component
+Same concept as modules with the following command...
+`yo angular:component [component-name]`
+
+## 
+## 
+## 
+
 # AngularJS generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-angular.svg?branch=master)](http://travis-ci.org/yeoman/generator-angular) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_Yeoman_chat_%E2%86%92-00d06f.svg)](https://gitter.im/yeoman/yeoman)
 
 > Yeoman generator for AngularJS - lets you quickly set up a project with sensible defaults and best practices.
