@@ -1,17 +1,7 @@
-'use strict';
+function <%= cameledName %>Controller() {
+  'ngInject';
 
-/**
- * @ngdoc function
- * @name <%= scriptAppName %>.controller:<%= classedName %>Ctrl
- * @description
- * # <%= classedName %>Ctrl
- * Controller of the <%= scriptAppName %>
- */
-angular.module('<%= scriptAppName %>')
-  .controller('<%= classedName %>Ctrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  var vm = this;
+};
+
+export default <%= cameledName %>Controller;
