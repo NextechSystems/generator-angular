@@ -1,5 +1,5 @@
-import template from './<%= cameledName %>.html'
-import controller from './<%= cameledName %>.controller'
+import template from './<%= cameledName %>.html';
+import controller from './<%= cameledName %>.controller';
 
 let <%= cameledName %> = {
     bindings: {
@@ -7,6 +7,6 @@ let <%= cameledName %> = {
     template,
     controller,
     name: '<%= cameledName %>'
-}
+};
 
 export default <%= cameledName %>;
