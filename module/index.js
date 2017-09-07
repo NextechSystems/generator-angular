@@ -18,6 +18,7 @@ Generator.prototype.createModuleFiles = function createModuleFiles() {
     mkdir.sync(path.join(basePath,'components'));
     mkdir.sync(path.join(basePath,'services'));
     this.appTemplate('service', path.join(basePath, 'services', this.cameledName) + '.service');
+    this.appTemplate('spec/service', path.join(basePath, 'services', this.cameledName) + '.spec');
     mkdir.sync(path.join(basePath,'dal'));
     this.appTemplate('dal', path.join(basePath, 'dal', this.cameledName) + '.dal');
 };

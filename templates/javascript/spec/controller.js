@@ -1,22 +1,35 @@
 describe('<%= cameledName %>: ', function () {
 
-  var scope, component, controller;
+var scope, component, controller, compile, element, componentController, state;
 
-  beforeEach(angular.mock.module(''));
-
-  beforeEach(inject(function ($controller, $rootScope, _$componentController_) {
-    scope = $rootScope.$new();
-
-    element = angular.element('<<%= name %>></<%= name %>>');
-    element = $compile(element)(scope);
-
-    component = _$componentController_('<%= cameledName %>', { $scope: scope });
-    controller = element.controller('<%= cameledName %>');
+  var buildUIElement = function () {
+      var elementString = '<<%= kebabedName %>></<%= kebabedName %>>';
+      element = nxElement.set(elementString);
+      element = compile(element)(scope);
+  
+      scope.$digest();
+  
+      component = componentController('<%= cameledName %>', { $scope: scope });
+      controller = element.controller('<%= cameledName %>');
+  };
+    
+  beforeEach(angular.mock.module('App'));  
+  beforeEach(angular.mock.module(function ($provide) {
+        $provide.factory('Service', () => mockService);
   }));
+  beforeEach(inject(function ($rootScope, $compile, _$componentController_, _$state_) {
+        scope = $rootScope.$new();
+        state = _$state_;
+        compile = $compile;
+        componentController = _$componentController_;
 
+        //TODO Initialize stuff here
+
+    }));
+  
   describe('UI Tests: ', function () {
   });
-
+  
   describe('Functional Tests: ', function () {
   });
 

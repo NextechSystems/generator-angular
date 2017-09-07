@@ -1,18 +1,22 @@
-'use strict';
-
 describe('Service: <%= cameledName %>', function () {
 
+  var <%= cameledName %>Service;
+
+  var mock<%= classedName %>Dal = {};
+
   // load the service's module
-  beforeEach(module('<%= scriptAppName %>'));
+  beforeEach(angular.mock.module('<%= cameledName %>App'));
 
   // instantiate service
-  var <%= cameledName %>;
-  beforeEach(inject(function (_<%= cameledName %>_) {
-    <%= cameledName %> = _<%= cameledName %>_;
+  beforeEach(angular.mock.module(function ($provide) {
+        $provide.factory('<%= cameledName %>Dal', () => mock<%= classedName %>Dal);
+  }));
+  beforeEach(inject(function ($injector) {
+    <%= cameledName %>Service = $injector.get('<%= cameledName %>Service');
   }));
 
   it('should do something', function () {
-    expect(!!<%= cameledName %>).toBe(true);
+    expect(false).toBe(true);
   });
 
 });
