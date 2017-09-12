@@ -10,4 +10,4 @@ function <%= cameledName %>Config($stateProvider, $urlRouterProvider) {
         });
 }
 
-export default paymentConfig;
+export default <%= cameledName %>Config;
