@@ -5,6 +5,7 @@
 2. Browse to your local generator-angular directory and run: `npm pack`
 3. Globally install the newly created package i.e. `npm install -g generator-angular-0.16.0.tgz`
 4. If you have issues with karma dependency try `npm i -g generator-angular-0.16.0.tgz generator-karma`
+5. If you havent already, you need to install 'yo': `npm install -g yo`
 
 ### Use
 
