@@ -1,7 +1,7 @@
 function <%= cameledName %>Controller() {
-  'ngInject';
+    'ngInject';
 
-  var vm = this;
-};
+    var vm = this;
+}
 
 export default <%= cameledName %>Controller;
