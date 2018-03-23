@@ -5,7 +5,7 @@ describe('Service: <%= cameledName %>', function () {
   // instantiate service
   var <%= cameledName %>,
     init = function () {
-      inject(function (_<%= cameledName %>_) {
+      inject((_<%= cameledName %>_) => {
         <%= cameledName %> = _<%= cameledName %>_;
       });
     };
@@ -13,13 +13,13 @@ describe('Service: <%= cameledName %>', function () {
   // load the service's module
   beforeEach(module('<%= scriptAppName %>'));
 
-  it('should do something', function () {
+  it('should do something', () => {
     init();
 
     expect(!!<%= cameledName %>).toBe(true);
   });
 
-  it('should be configurable', function () {
+  it('should be configurable', () => {
     module(function (<%= cameledName %>Provider) {
       <%= cameledName %>Provider.setSalutation('Lorem ipsum');
     });

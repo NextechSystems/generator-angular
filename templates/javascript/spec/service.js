@@ -8,14 +8,14 @@ describe('Service: <%= cameledName %>', function () {
     beforeEach(angular.mock.module('<%= cameledName %>App'));
 
     // instantiate service
-    beforeEach(angular.mock.module(function ($provide) {
+    beforeEach(angular.mock.module(($provide) => {
         $provide.factory('<%= cameledName %>Dal', () => mock<%= classedName %>Dal);
     }));
-    beforeEach(inject(function ($injector) {
+    beforeEach(inject(($injector) => {
     <%= cameledName %>Service = $injector.get('<%= cameledName %>Service');
     }));
 
-    it('should do something', function () {
+    it('should do something', () => {
         expect(false).toBe(true);
     });
 

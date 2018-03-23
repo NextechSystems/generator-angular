@@ -3,7 +3,7 @@ function <%= cameledName %>Service(<%= cameledName %>Dal) {
 
     var service = {};
 
-    service.getList = function () {
+    service.getList = () => {
         return <%= cameledName %>Dal.getList();
     };
 
